@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Form View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginFormViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-Z9-edn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-ua-PeS" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email или телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOI-NS-YKR">
+                                                <rect key="frame" x="15" y="351" width="384" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-8k-aIP">
+                                                <rect key="frame" x="15" y="390" width="384" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwv-rZ-iMw">
+                                                <rect key="frame" x="15" y="449" width="384" height="30"/>
+                                                <color key="backgroundColor" red="0.26666666666666666" green="0.50588235294117645" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Войти">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wr9-7L-Ss1"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vkicon1024" translatesAutoresizingMaskIntoConstraints="NO" id="Ucj-XP-g0n">
+                                                <rect key="frame" x="143" y="173" width="128" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="9i4-z8-43N"/>
+                                                    <constraint firstAttribute="width" constant="128" id="TMJ-HJ-EE6"/>
+                                                    <constraint firstAttribute="height" constant="128" id="Tot-mE-Ip3"/>
+                                                    <constraint firstAttribute="height" constant="80" id="zpK-AE-DV5"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="9i4-z8-43N"/>
+                                                        <exclude reference="TMJ-HJ-EE6"/>
+                                                        <exclude reference="Tot-mE-Ip3"/>
+                                                        <exclude reference="zpK-AE-DV5"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="9i4-z8-43N"/>
+                                                        <include reference="zpK-AE-DV5"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="TMJ-HJ-EE6"/>
+                                                        <include reference="Tot-mE-Ip3"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="3Xf-8k-aIP" firstAttribute="leading" secondItem="NdI-ua-PeS" secondAttribute="leading" constant="15" id="7cT-vX-uxo"/>
+                                            <constraint firstItem="lOI-NS-YKR" firstAttribute="leading" secondItem="NdI-ua-PeS" secondAttribute="leading" constant="15" id="AyV-38-Xon"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kwv-rZ-iMw" secondAttribute="trailing" constant="15" id="Epg-cU-Oio"/>
+                                            <constraint firstItem="lOI-NS-YKR" firstAttribute="centerY" secondItem="NdI-ua-PeS" secondAttribute="centerY" id="Kdj-2E-fZQ"/>
+                                            <constraint firstItem="Kwv-rZ-iMw" firstAttribute="leading" secondItem="NdI-ua-PeS" secondAttribute="leading" constant="15" id="SbU-nj-YFg"/>
+                                            <constraint firstItem="Kwv-rZ-iMw" firstAttribute="top" secondItem="3Xf-8k-aIP" secondAttribute="bottom" constant="25" id="Sum-J0-gu0"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Xf-8k-aIP" secondAttribute="trailing" constant="15" id="VsL-T5-mT0"/>
+                                            <constraint firstItem="3Xf-8k-aIP" firstAttribute="top" secondItem="lOI-NS-YKR" secondAttribute="bottom" constant="5" id="afy-p5-aTC"/>
+                                            <constraint firstItem="Ucj-XP-g0n" firstAttribute="centerX" secondItem="NdI-ua-PeS" secondAttribute="centerX" id="bbD-OP-gIc"/>
+                                            <constraint firstAttribute="trailing" secondItem="lOI-NS-YKR" secondAttribute="trailing" constant="15" id="dr0-At-IwD"/>
+                                            <constraint firstItem="lOI-NS-YKR" firstAttribute="top" secondItem="Ucj-XP-g0n" secondAttribute="bottom" constant="50" id="kjC-XW-6us"/>
+                                            <constraint firstItem="Kwv-rZ-iMw" firstAttribute="height" secondItem="3Xf-8k-aIP" secondAttribute="height" multiplier="0.882353" id="kzJ-WF-FKe"/>
+                                            <constraint firstItem="lOI-NS-YKR" firstAttribute="top" secondItem="Ucj-XP-g0n" secondAttribute="bottom" constant="25" id="ukS-lD-fCs"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kjC-XW-6us"/>
+                                                <exclude reference="ukS-lD-fCs"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="ukS-lD-fCs"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="kjC-XW-6us"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NdI-ua-PeS" secondAttribute="trailing" id="191-zP-ox8"/>
+                                    <constraint firstAttribute="bottom" secondItem="NdI-ua-PeS" secondAttribute="bottom" id="GR4-8L-y2f"/>
+                                    <constraint firstItem="NdI-ua-PeS" firstAttribute="centerX" secondItem="KVf-Z9-edn" secondAttribute="centerX" id="RmI-h8-K0u"/>
+                                    <constraint firstItem="NdI-ua-PeS" firstAttribute="centerY" secondItem="KVf-Z9-edn" secondAttribute="centerY" id="Zht-fG-L2D"/>
+                                    <constraint firstItem="NdI-ua-PeS" firstAttribute="leading" secondItem="KVf-Z9-edn" secondAttribute="leading" id="iJd-9j-wpA"/>
+                                    <constraint firstItem="NdI-ua-PeS" firstAttribute="top" secondItem="KVf-Z9-edn" secondAttribute="top" id="jeS-Td-Ou4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="O1x-gU-Efx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="RfJ-fK-cCZ"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVf-Z9-edn" secondAttribute="trailing" id="BjX-vK-hMi"/>
+                            <constraint firstItem="KVf-Z9-edn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fiY-cn-ami"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KVf-Z9-edn" secondAttribute="bottom" id="iTk-rl-nk8"/>
+                            <constraint firstItem="KVf-Z9-edn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="slF-Ky-L68"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailPhoneTextField" destination="lOI-NS-YKR" id="L5f-hM-iyv"/>
+                        <outlet property="loginButton" destination="Kwv-rZ-iMw" id="bZH-G4-B0v"/>
+                        <outlet property="passwordTextField" destination="3Xf-8k-aIP" id="f1L-5y-g2D"/>
+                        <outlet property="scrollView" destination="KVf-Z9-edn" id="sOX-8q-VHe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236.23188405797103" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="vkicon1024" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
