@@ -78,11 +78,24 @@ class LoginFormViewController: UIViewController {
         guard let login = emailPhoneTextField.text,
               let password = passwordTextField.text else { return false }
         
+        var loginResult: Bool = false
+        
         if login == "admin" &&
            password == "admin" {
-            return true
+            loginResult = true
+        } else {
+            showLoginErrorAlert()
         }
         
-        return false
+        return loginResult
+    }
+    
+    // MARK: - Отображение alert о неверных данных
+    func showLoginErrorAlert() {
+        let alertContoller = UIAlertController(title: "Ошибка!", message: "Введены неверные данные пользователя. Подсказка: логин - admin, пароль - admin", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertContoller.addAction(action)
+        present(alertContoller, animated: true, completion: nil)
+        
     }
 }
