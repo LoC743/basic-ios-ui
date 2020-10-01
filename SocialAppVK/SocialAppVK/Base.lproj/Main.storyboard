@@ -145,7 +145,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="0ek-uu-XcU">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="9R5-hi-UnB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="9R5-hi-UnB" customClass="TabBarController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fp0-0P-caC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

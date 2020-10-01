@@ -69,8 +69,10 @@ class LoginFormViewController: UIViewController {
         print(#function)
         if isLoginSuccesfull() {
             print("Успешный вход!")
+            moveToTabBarController()
         } else {
             print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
+            showLoginErrorAlert()
         }
     }
     
@@ -83,8 +85,6 @@ class LoginFormViewController: UIViewController {
         if login == "admin" &&
            password == "admin" {
             loginResult = true
-        } else {
-            showLoginErrorAlert()
         }
         
         return loginResult
@@ -96,6 +96,12 @@ class LoginFormViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertContoller.addAction(action)
         present(alertContoller, animated: true, completion: nil)
-        
+    }
+    
+    // MARK: - Переход к TabBarController при успешной авторизации
+    func moveToTabBarController() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
