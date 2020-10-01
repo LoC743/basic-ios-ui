@@ -67,8 +67,22 @@ class LoginFormViewController: UIViewController {
     // MARK: - Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         print(#function)
-        print("Получены значения:")
-        print("Логин: \(emailPhoneTextField.text ?? "Нет значения")")
-        print("Пароль: \(passwordTextField.text ?? "Нет значения")")
+        if isLoginSuccesfull() {
+            print("Успешный вход!")
+        } else {
+            print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
+        }
+    }
+    
+    func isLoginSuccesfull() -> Bool {
+        guard let login = emailPhoneTextField.text,
+              let password = passwordTextField.text else { return false }
+        
+        if login == "admin" &&
+           password == "admin" {
+            return true
+        }
+        
+        return false
     }
 }
