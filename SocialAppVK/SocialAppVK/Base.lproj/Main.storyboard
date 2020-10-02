@@ -30,13 +30,13 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-8k-aIP">
-                                                <rect key="frame" x="15" y="390" width="384" height="34"/>
+                                                <rect key="frame" x="15" y="395" width="384" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwv-rZ-iMw">
-                                                <rect key="frame" x="15" y="449" width="384" height="30"/>
+                                                <rect key="frame" x="15" y="454" width="384" height="30"/>
                                                 <color key="backgroundColor" red="0.26666666666666666" green="0.50588235294117645" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Войти">
@@ -85,7 +85,7 @@
                                             <constraint firstItem="Kwv-rZ-iMw" firstAttribute="leading" secondItem="NdI-ua-PeS" secondAttribute="leading" constant="15" id="SbU-nj-YFg"/>
                                             <constraint firstItem="Kwv-rZ-iMw" firstAttribute="top" secondItem="3Xf-8k-aIP" secondAttribute="bottom" constant="25" id="Sum-J0-gu0"/>
                                             <constraint firstAttribute="trailing" secondItem="3Xf-8k-aIP" secondAttribute="trailing" constant="15" id="VsL-T5-mT0"/>
-                                            <constraint firstItem="3Xf-8k-aIP" firstAttribute="top" secondItem="lOI-NS-YKR" secondAttribute="bottom" constant="5" id="afy-p5-aTC"/>
+                                            <constraint firstItem="3Xf-8k-aIP" firstAttribute="top" secondItem="lOI-NS-YKR" secondAttribute="bottom" constant="10" id="afy-p5-aTC"/>
                                             <constraint firstItem="Ucj-XP-g0n" firstAttribute="centerX" secondItem="NdI-ua-PeS" secondAttribute="centerX" id="bbD-OP-gIc"/>
                                             <constraint firstAttribute="trailing" secondItem="lOI-NS-YKR" secondAttribute="trailing" constant="15" id="dr0-At-IwD"/>
                                             <constraint firstItem="lOI-NS-YKR" firstAttribute="top" secondItem="Ucj-XP-g0n" secondAttribute="bottom" constant="50" id="kjC-XW-6us"/>
@@ -132,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="NdI-ua-PeS" id="caw-yb-ZuP"/>
                         <outlet property="emailPhoneTextField" destination="lOI-NS-YKR" id="L5f-hM-iyv"/>
                         <outlet property="loginButton" destination="Kwv-rZ-iMw" id="bZH-G4-B0v"/>
                         <outlet property="passwordTextField" destination="3Xf-8k-aIP" id="f1L-5y-g2D"/>
@@ -149,7 +150,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fp0-0P-caC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.035294117647058823" green="0.082352941176470587" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ibf-gu-SJy" kind="relationship" relationship="viewControllers" id="lSh-DH-kuQ"/>
@@ -160,14 +162,14 @@
             </objects>
             <point key="canvasLocation" x="589" y="151"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Друзья-->
         <scene sceneID="CJK-dZ-SR8">
             <objects>
                 <tableViewController id="umB-Ee-Hf5" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JOv-YU-k2n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6Fz-cS-VfS">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
@@ -186,7 +188,7 @@
                             <outlet property="delegate" destination="umB-Ee-Hf5" id="xfc-SI-gJk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rGr-fq-fFt"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="rGr-fq-fFt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aU-gT-gfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,14 +229,14 @@
             </objects>
             <point key="canvasLocation" x="3254" y="-324"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Группы-->
         <scene sceneID="Sr2-oR-Lx8">
             <objects>
                 <tableViewController id="OKX-nS-9Ii" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E4s-71-etX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QYj-Ot-S3P">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
@@ -253,7 +255,7 @@
                             <outlet property="delegate" destination="OKX-nS-9Ii" id="f3r-dC-I7y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cCR-uN-qE4"/>
+                    <navigationItem key="navigationItem" title="Группы" id="cCR-uN-qE4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynD-bw-hRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,15 +296,20 @@
             </objects>
             <point key="canvasLocation" x="3254" y="494"/>
         </scene>
-        <!--Item-->
+        <!--Группы-->
         <scene sceneID="DrE-ea-SUI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H5Q-4w-M5f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fGL-WN-kgg"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.3" catalog="system" id="fGL-WN-kgg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nkx-Ed-Bh3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -313,15 +320,17 @@
             </objects>
             <point key="canvasLocation" x="1512" y="494"/>
         </scene>
-        <!--Item-->
+        <!--Друзья-->
         <scene sceneID="ijR-75-niN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibf-gu-SJy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oos-zc-YX6"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="oos-zc-YX6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H3f-Kk-b8Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -334,6 +343,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="vkicon1024" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

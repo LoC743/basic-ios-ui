@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginFormViewController: UIViewController {
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emailPhoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -18,7 +19,11 @@ class LoginFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contentView.backgroundColor = Colors.palePurplePantone
+        view.backgroundColor = Colors.palePurplePantone
+        
         setupButton()
+        setupTextFields()
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
@@ -27,6 +32,16 @@ class LoginFormViewController: UIViewController {
     // MARK: - Настройки элементов UI
     func setupButton() {
         loginButton.layer.cornerRadius = 5
+        loginButton.backgroundColor = Colors.baseVK
+        loginButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
+        loginButton.setTitleColor(Colors.palePurplePantone, for: .normal)
+    }
+    
+    func setupTextFields() {
+        [emailPhoneTextField, passwordTextField].forEach { (textField) in
+            textField?.layer.cornerRadius = 20.0
+            textField?.backgroundColor = .white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,4 +119,13 @@ class LoginFormViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+}
+
+
+struct Colors {
+    static let oxfordBlue = UIColor(red: 9/255, green: 21/255, blue: 64/255, alpha: 1.0)
+    static let cornflowerBlue = UIColor(red: 118/255, green: 146/255, blue: 255/255, alpha: 1.0)
+    static let palePurplePantone = UIColor(red: 255/255, green: 240/255, blue: 255/255, alpha: 1.0)
+    static let darkPalePurplePantone = UIColor(red: 255/255, green: 230/255, blue: 255/255, alpha: 1.0)
+    static let baseVK = UIColor(red: 68/255, green: 129/255, blue: 182/255, alpha: 1.0)
 }
