@@ -15,6 +15,20 @@ class FriendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        contentView.backgroundColor = Colors.palePurplePantone
+        
+        setupFriendImageView()
+        setupNameLabel()
+    }
+    
+    func setupFriendImageView() {
+        friendImageView.layer.cornerRadius = friendImageView.bounds.height / 2
+        friendImageView.contentMode = .scaleAspectFill
+    }
+    
+    func setupNameLabel() {
+        nameLabel.textColor = Colors.oxfordBlue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

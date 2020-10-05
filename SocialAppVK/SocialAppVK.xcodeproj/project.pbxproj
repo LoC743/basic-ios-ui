@@ -74,15 +74,15 @@
 				8A9A173B25223748003E44BC /* AppDelegate.swift */,
 				8A9A173D25223748003E44BC /* SceneDelegate.swift */,
 				8A9A174125223748003E44BC /* Main.storyboard */,
-				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
-				8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */,
 				8A9A175125223E94003E44BC /* LoginFormViewController.swift */,
 				8A9A17442522374E003E44BC /* Assets.xcassets */,
 				8A9A17462522374E003E44BC /* LaunchScreen.storyboard */,
 				8A9A17492522374E003E44BC /* Info.plist */,
 				8A3E6DAE2525E50B00766A2E /* TabBarController.swift */,
 				8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */,
+				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
 				8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */,
+				8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */,
 			);
 			path = SocialAppVK;
 			sourceTree = "<group>";
