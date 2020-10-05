@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6DAE2525E50B00766A2E /* TabBarController.swift */; };
+		8A8FBFA8252B5C8B00704926 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */; };
+		8A8FBFA9252B5C8B00704926 /* AddNewGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */; };
 		8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173B25223748003E44BC /* AppDelegate.swift */; };
 		8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173D25223748003E44BC /* SceneDelegate.swift */; };
 		8A9A174325223748003E44BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9A174125223748003E44BC /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		8A3E6DAE2525E50B00766A2E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
+		8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewGroupViewController.xib; sourceTree = "<group>"; };
 		8A9A173825223748003E44BC /* SocialAppVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAppVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9A173B25223748003E44BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A9A173D25223748003E44BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,14 +93,8 @@
 				8A9A17462522374E003E44BC /* LaunchScreen.storyboard */,
 				8A9A17492522374E003E44BC /* Info.plist */,
 				8A3E6DAE2525E50B00766A2E /* TabBarController.swift */,
-				8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */,
-				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
-				8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */,
-				8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */,
-				8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */,
-				8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */,
-				8AA99CE3252B426200A05F86 /* GroupsCollectionViewController.swift */,
-				8AA99CE6252B427400A05F86 /* GroupCollectionViewCell.swift */,
+				8AA99CE9252B54AF00A05F86 /* FriendsTab */,
+				8AA99CEA252B54C600A05F86 /* GroupsTab */,
 			);
 			path = SocialAppVK;
 			sourceTree = "<group>";
@@ -109,6 +107,30 @@
 				8AA99CDA252B2C1D00A05F86 /* Colors.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8AA99CE9252B54AF00A05F86 /* FriendsTab */ = {
+			isa = PBXGroup;
+			children = (
+				8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */,
+				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
+				8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */,
+				8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */,
+			);
+			path = FriendsTab;
+			sourceTree = "<group>";
+		};
+		8AA99CEA252B54C600A05F86 /* GroupsTab */ = {
+			isa = PBXGroup;
+			children = (
+				8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */,
+				8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */,
+				8AA99CE3252B426200A05F86 /* GroupsCollectionViewController.swift */,
+				8AA99CE6252B427400A05F86 /* GroupCollectionViewCell.swift */,
+				8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */,
+				8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */,
+			);
+			path = GroupsTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9A17482522374E003E44BC /* LaunchScreen.storyboard in Resources */,
+				8A8FBFA9252B5C8B00704926 /* AddNewGroupViewController.xib in Resources */,
 				8A9A17452522374E003E44BC /* Assets.xcassets in Resources */,
 				8A9A174325223748003E44BC /* Main.storyboard in Resources */,
 			);
@@ -190,6 +213,7 @@
 				8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */,
 				8AA99CC7252B1E8000A05F86 /* FriendTableViewCell.swift in Sources */,
 				8AA99CD1252B1EDE00A05F86 /* Group.swift in Sources */,
+				8A8FBFA8252B5C8B00704926 /* AddNewGroupViewController.swift in Sources */,
 				8AA99CE4252B426200A05F86 /* GroupsCollectionViewController.swift in Sources */,
 				8AA99CCA252B1E8C00A05F86 /* GroupTableViewCell.swift in Sources */,
 				8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */,

@@ -318,7 +318,20 @@
                             <outlet property="delegate" destination="OKX-nS-9Ii" id="f3r-dC-I7y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Группы" id="cCR-uN-qE4"/>
+                    <navigationItem key="navigationItem" title="Группы" id="cCR-uN-qE4">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add" image="plus" catalog="system" id="rTB-6U-m7E">
+                                <connections>
+                                    <action selector="addNewGroup:" destination="OKX-nS-9Ii" id="Cjx-ab-apQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Reset" image="arrow.clockwise" catalog="system" id="kGO-rR-HO5">
+                                <connections>
+                                    <action selector="resetGroupList:" destination="OKX-nS-9Ii" id="O1M-id-9gB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynD-bw-hRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,8 +441,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vkicon1024" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
