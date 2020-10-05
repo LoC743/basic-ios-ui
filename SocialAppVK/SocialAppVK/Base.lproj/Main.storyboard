@@ -244,6 +244,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="mtw-FX-Yc1" secondAttribute="trailing" id="9Ow-VX-jGO"/>
                                         <constraint firstItem="mtw-FX-Yc1" firstAttribute="top" secondItem="w9C-7l-LQ4" secondAttribute="top" id="Jbd-1x-oan"/>
@@ -333,7 +334,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Foo-Uq-1WW">
                             <size key="itemSize" width="414" height="739"/>
-                            <size key="estimatedItemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -350,6 +350,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="z2I-I1-l1B" secondAttribute="bottom" id="J0f-ov-toK"/>
                                         <constraint firstItem="z2I-I1-l1B" firstAttribute="top" secondItem="3FV-dg-8RU" secondAttribute="top" id="NyQ-DP-eAW"/>
