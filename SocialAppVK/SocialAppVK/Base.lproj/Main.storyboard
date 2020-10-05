@@ -204,7 +204,6 @@
                                 <connections>
                                     <outlet property="friendImageView" destination="4p8-Kf-WiU" id="c2N-Gg-Qjm"/>
                                     <outlet property="nameLabel" destination="8Ww-dM-T8h" id="YRR-Co-Gh9"/>
-                                    <segue destination="7bj-N7-yIU" kind="show" id="YPZ-tS-9Tr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -222,27 +221,27 @@
         <!--Friends Collection View Controller-->
         <scene sceneID="636-Ve-Wbn">
             <objects>
-                <collectionViewController id="7bj-N7-yIU" customClass="FriendsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FriendsCollectionViewController" id="7bj-N7-yIU" customClass="FriendsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uCA-v9-zbk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvD-Qn-ELw">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvD-Qn-ELw">
+                            <size key="itemSize" width="414" height="759"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCollectionViewCell" id="A8B-x2-nZI" customClass="FriendCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w9C-7l-LQ4">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w9C-7l-LQ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtw-FX-Yc1">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -252,6 +251,7 @@
                                         <constraint firstAttribute="bottom" secondItem="mtw-FX-Yc1" secondAttribute="bottom" id="jgf-Bf-9ha"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="759"/>
                                 <connections>
                                     <outlet property="friendImageView" destination="mtw-FX-Yc1" id="fku-h6-xEY"/>
                                 </connections>
@@ -266,7 +266,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpi-NH-Lip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="-324"/>
+            <point key="canvasLocation" x="3253.6231884057975" y="-324.45652173913044"/>
         </scene>
         <!--Группы-->
         <scene sceneID="Sr2-oR-Lx8">
@@ -309,7 +309,6 @@
                                 <connections>
                                     <outlet property="groupImageView" destination="IZG-x1-4U4" id="cs6-YX-Gu8"/>
                                     <outlet property="nameLabel" destination="cPL-ah-Nyo" id="9BI-wk-OYE"/>
-                                    <segue destination="PyL-h7-aOO" kind="show" id="I3K-mZ-J9f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -327,27 +326,28 @@
         <!--Groups Collection View Controller-->
         <scene sceneID="owL-dy-cex">
             <objects>
-                <collectionViewController id="PyL-h7-aOO" customClass="GroupsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="GroupsCollectionViewController" id="PyL-h7-aOO" customClass="GroupsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g10-gJ-Koa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Foo-Uq-1WW">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Foo-Uq-1WW">
+                            <size key="itemSize" width="414" height="739"/>
+                            <size key="estimatedItemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewCell" id="0mH-sw-X20" customClass="GroupCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FV-dg-8RU">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2I-I1-l1B">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -357,6 +357,7 @@
                                         <constraint firstItem="z2I-I1-l1B" firstAttribute="leading" secondItem="3FV-dg-8RU" secondAttribute="leading" id="rpj-YW-DrE"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="739"/>
                                 <connections>
                                     <outlet property="groupImageView" destination="z2I-I1-l1B" id="5J3-oz-4s0"/>
                                 </connections>
