@@ -20,6 +20,7 @@
 		8AA99CD1252B1EDE00A05F86 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD0252B1EDE00A05F86 /* Group.swift */; };
 		8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */; };
 		8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */; };
+		8AA99CDB252B2C1D00A05F86 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CDA252B2C1D00A05F86 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8AA99CD0252B1EDE00A05F86 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		8AA99CDA252B2C1D00A05F86 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				8AA99CCD252B1ED800A05F86 /* User.swift */,
 				8AA99CD0252B1EDE00A05F86 /* Group.swift */,
+				8AA99CDA252B2C1D00A05F86 /* Colors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9A175225223E94003E44BC /* LoginFormViewController.swift in Sources */,
+				8AA99CDB252B2C1D00A05F86 /* Colors.swift in Sources */,
 				8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */,
 				8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */,
 				8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */,
