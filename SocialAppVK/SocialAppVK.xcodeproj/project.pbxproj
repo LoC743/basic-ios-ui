@@ -14,6 +14,12 @@
 		8A9A17452522374E003E44BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9A17442522374E003E44BC /* Assets.xcassets */; };
 		8A9A17482522374E003E44BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9A17462522374E003E44BC /* LaunchScreen.storyboard */; };
 		8A9A175225223E94003E44BC /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A175125223E94003E44BC /* LoginFormViewController.swift */; };
+		8AA99CC7252B1E8000A05F86 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */; };
+		8AA99CCA252B1E8C00A05F86 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */; };
+		8AA99CCE252B1ED800A05F86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CCD252B1ED800A05F86 /* User.swift */; };
+		8AA99CD1252B1EDE00A05F86 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD0252B1EDE00A05F86 /* Group.swift */; };
+		8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */; };
+		8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		8A9A17472522374E003E44BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A9A17492522374E003E44BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A9A175125223E94003E44BC /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
+		8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		8AA99CCD252B1ED800A05F86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8AA99CD0252B1EDE00A05F86 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +70,30 @@
 		8A9A173A25223748003E44BC /* SocialAppVK */ = {
 			isa = PBXGroup;
 			children = (
+				8AA99CCC252B1EC100A05F86 /* Model */,
 				8A9A173B25223748003E44BC /* AppDelegate.swift */,
 				8A9A173D25223748003E44BC /* SceneDelegate.swift */,
 				8A9A174125223748003E44BC /* Main.storyboard */,
+				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
+				8AA99CC9252B1E8C00A05F86 /* GroupTableViewCell.swift */,
 				8A9A175125223E94003E44BC /* LoginFormViewController.swift */,
 				8A9A17442522374E003E44BC /* Assets.xcassets */,
 				8A9A17462522374E003E44BC /* LaunchScreen.storyboard */,
 				8A9A17492522374E003E44BC /* Info.plist */,
 				8A3E6DAE2525E50B00766A2E /* TabBarController.swift */,
+				8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */,
+				8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */,
 			);
 			path = SocialAppVK;
+			sourceTree = "<group>";
+		};
+		8AA99CCC252B1EC100A05F86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AA99CCD252B1ED800A05F86 /* User.swift */,
+				8AA99CD0252B1EDE00A05F86 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +167,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9A175225223E94003E44BC /* LoginFormViewController.swift in Sources */,
+				8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */,
 				8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */,
+				8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */,
+				8AA99CC7252B1E8000A05F86 /* FriendTableViewCell.swift in Sources */,
+				8AA99CD1252B1EDE00A05F86 /* Group.swift in Sources */,
+				8AA99CCA252B1E8C00A05F86 /* GroupTableViewCell.swift in Sources */,
 				8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */,
 				8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */,
+				8AA99CCE252B1ED800A05F86 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
