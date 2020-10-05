@@ -9,11 +9,11 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    let friendTestData: [User] = [User(image: UIImage.init(named: "profile1")!, fullName: "Иван Иванов"),
-                                  User(image: UIImage.init(named: "profile2")!, fullName: "Мария Иванова"),
-                                  User(image: UIImage.init(named: "profile3")!, fullName: "Николай Сидоров"),
-                                  User(image: UIImage.init(named: "profile4")!, fullName: "Леонид Харламов"),
-                                  User(image: UIImage.init(named: "profile5")!, fullName: "Ксения Новикова")]
+    let friendTestData: [User] = [User(image: UIImage(named: "profile1")!, fullName: "Иван Иванов"),
+                                  User(image: UIImage(named: "profile2")!, fullName: "Мария Иванова"),
+                                  User(image: UIImage(named: "profile3")!, fullName: "Николай Сидоров"),
+                                  User(image: UIImage(named: "profile4")!, fullName: "Леонид Харламов"),
+                                  User(image: UIImage(named: "profile5")!, fullName: "Ксения Новикова")]
 
     override func viewDidLoad() {
         super.viewDidLoad()

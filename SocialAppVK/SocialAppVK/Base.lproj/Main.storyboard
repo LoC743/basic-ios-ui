@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="2418.840579710145" y="-324.45652173913044"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Friends Collection View Controller-->
         <scene sceneID="636-Ve-Wbn">
             <objects>
-                <collectionViewController id="7bj-N7-yIU" sceneMemberID="viewController">
+                <collectionViewController id="7bj-N7-yIU" customClass="FriendsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uCA-v9-zbk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,13 +234,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A8B-x2-nZI">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCollectionViewCell" id="A8B-x2-nZI" customClass="FriendCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w9C-7l-LQ4">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtw-FX-Yc1">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="mtw-FX-Yc1" secondAttribute="trailing" id="9Ow-VX-jGO"/>
+                                        <constraint firstItem="mtw-FX-Yc1" firstAttribute="top" secondItem="w9C-7l-LQ4" secondAttribute="top" id="Jbd-1x-oan"/>
+                                        <constraint firstItem="mtw-FX-Yc1" firstAttribute="leading" secondItem="w9C-7l-LQ4" secondAttribute="leading" id="ME8-sg-Xo3"/>
+                                        <constraint firstAttribute="bottom" secondItem="mtw-FX-Yc1" secondAttribute="bottom" id="jgf-Bf-9ha"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="friendImageView" destination="mtw-FX-Yc1" id="fku-h6-xEY"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -271,25 +285,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZG-x1-4U4">
-                                            <rect key="frame" x="10" y="10" width="55" height="55"/>
+                                            <rect key="frame" x="10" y="-5.6666666666666679" width="55" height="55"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="Jbt-HN-4jc"/>
-                                                <constraint firstAttribute="height" constant="55" id="y39-d8-cLf"/>
+                                                <constraint firstAttribute="height" constant="55" id="1bg-Kz-fDE"/>
+                                                <constraint firstAttribute="width" constant="55" id="Oh5-XS-Grt"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPL-ah-Nyo">
-                                            <rect key="frame" x="80" y="11.333333333333336" width="42" height="21"/>
+                                            <rect key="frame" x="80" y="11.333333333333336" width="299" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="IZG-x1-4U4" firstAttribute="leading" secondItem="3mO-xd-3Bn" secondAttribute="leading" constant="10" id="hNK-6g-EFv"/>
-                                        <constraint firstItem="cPL-ah-Nyo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IZG-x1-4U4" secondAttribute="trailing" constant="8" symbolic="YES" id="nIP-Tf-r4w"/>
-                                        <constraint firstItem="IZG-x1-4U4" firstAttribute="top" secondItem="3mO-xd-3Bn" secondAttribute="top" constant="10" id="pRx-nC-abW"/>
-                                        <constraint firstAttribute="trailing" secondItem="cPL-ah-Nyo" secondAttribute="trailing" constant="292" id="tGR-QI-Rxj"/>
-                                        <constraint firstItem="cPL-ah-Nyo" firstAttribute="centerY" secondItem="3mO-xd-3Bn" secondAttribute="centerY" id="vgN-Gr-KMJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cPL-ah-Nyo" secondAttribute="trailing" constant="15" id="2gq-1g-JEB"/>
+                                        <constraint firstItem="cPL-ah-Nyo" firstAttribute="leading" secondItem="IZG-x1-4U4" secondAttribute="trailing" constant="15" id="IQF-1a-hBd"/>
+                                        <constraint firstItem="cPL-ah-Nyo" firstAttribute="centerY" secondItem="3mO-xd-3Bn" secondAttribute="centerY" id="ZRQ-b4-BPz"/>
+                                        <constraint firstItem="IZG-x1-4U4" firstAttribute="leading" secondItem="3mO-xd-3Bn" secondAttribute="leading" constant="10" id="cve-Y7-V6I"/>
+                                        <constraint firstItem="IZG-x1-4U4" firstAttribute="centerY" secondItem="3mO-xd-3Bn" secondAttribute="centerY" id="x45-mU-jLf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -310,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="2418.840579710145" y="493.20652173913049"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Groups Collection View Controller-->
         <scene sceneID="owL-dy-cex">
             <objects>
-                <collectionViewController id="PyL-h7-aOO" sceneMemberID="viewController">
+                <collectionViewController id="PyL-h7-aOO" customClass="GroupsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g10-gJ-Koa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,13 +339,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0mH-sw-X20">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewCell" id="0mH-sw-X20" customClass="GroupCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FV-dg-8RU">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2I-I1-l1B">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="z2I-I1-l1B" secondAttribute="bottom" id="J0f-ov-toK"/>
+                                        <constraint firstItem="z2I-I1-l1B" firstAttribute="top" secondItem="3FV-dg-8RU" secondAttribute="top" id="NyQ-DP-eAW"/>
+                                        <constraint firstAttribute="trailing" secondItem="z2I-I1-l1B" secondAttribute="trailing" id="TaE-4Y-pFj"/>
+                                        <constraint firstItem="z2I-I1-l1B" firstAttribute="leading" secondItem="3FV-dg-8RU" secondAttribute="leading" id="rpj-YW-DrE"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="groupImageView" destination="z2I-I1-l1B" id="5J3-oz-4s0"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -343,7 +371,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omd-Iw-a3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="494"/>
+            <point key="canvasLocation" x="3253.6231884057975" y="493.20652173913049"/>
         </scene>
         <!--Группы-->
         <scene sceneID="DrE-ea-SUI">

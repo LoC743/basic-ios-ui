@@ -15,6 +15,20 @@ class GroupTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        contentView.backgroundColor = Colors.palePurplePantone
+        
+        setupFriendImageView()
+        setupNameLabel()
+    }
+    
+    func setupFriendImageView() {
+        groupImageView.layer.cornerRadius = groupImageView.bounds.height / 2
+        groupImageView.contentMode = .scaleAspectFill
+    }
+    
+    func setupNameLabel() {
+        nameLabel.textColor = Colors.oxfordBlue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
