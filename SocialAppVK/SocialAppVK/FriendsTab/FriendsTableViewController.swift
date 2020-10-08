@@ -30,7 +30,7 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell", for: indexPath) as! FriendTableViewCell
         
-        cell.friendImageView.image = friendTestData[indexPath.row].image
+        cell.avatarView.avatarImageView.image = friendTestData[indexPath.row].image
         cell.nameLabel.text = friendTestData[indexPath.row].fullName
 
         return cell

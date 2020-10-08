@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A1C1BE7252F2AF500213536 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1C1BE6252F2AF500213536 /* AvatarView.swift */; };
 		8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6DAE2525E50B00766A2E /* TabBarController.swift */; };
 		8A8FBFA8252B5C8B00704926 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */; };
 		8A8FBFA9252B5C8B00704926 /* AddNewGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A1C1BE6252F2AF500213536 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		8A3E6DAE2525E50B00766A2E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
 		8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewGroupViewController.xib; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				8AA99CC6252B1E8000A05F86 /* FriendTableViewCell.swift */,
 				8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */,
 				8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */,
+				8A1C1BE6252F2AF500213536 /* AvatarView.swift */,
 			);
 			path = FriendsTab;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */,
 				8AA99CE1252B425500A05F86 /* FriendsCollectionViewController.swift in Sources */,
 				8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */,
+				8A1C1BE7252F2AF500213536 /* AvatarView.swift in Sources */,
 				8AA99CCE252B1ED800A05F86 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

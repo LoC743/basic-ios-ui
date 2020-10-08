@@ -8,8 +8,7 @@
 import UIKit
 
 class FriendTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var friendImageView: UIImageView!
+    @IBOutlet weak var avatarView: AvatarView!
     @IBOutlet weak var nameLabel: UILabel!
     
     
@@ -18,13 +17,7 @@ class FriendTableViewCell: UITableViewCell {
         
         contentView.backgroundColor = Colors.palePurplePantone
         
-        setupFriendImageView()
         setupNameLabel()
-    }
-    
-    func setupFriendImageView() {
-        friendImageView.layer.cornerRadius = friendImageView.bounds.height / 2
-        friendImageView.contentMode = .scaleAspectFill
     }
     
     func setupNameLabel() {
