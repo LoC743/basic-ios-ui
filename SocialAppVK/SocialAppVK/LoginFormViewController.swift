@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginFormViewController: UIViewController {
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emailPhoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -18,7 +19,11 @@ class LoginFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contentView.backgroundColor = Colors.palePurplePantone
+        view.backgroundColor = Colors.palePurplePantone
+        
         setupButton()
+        setupTextFields()
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
@@ -27,6 +32,16 @@ class LoginFormViewController: UIViewController {
     // MARK: - Настройки элементов UI
     func setupButton() {
         loginButton.layer.cornerRadius = 5
+        loginButton.backgroundColor = Colors.baseVK
+        loginButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
+        loginButton.setTitleColor(Colors.palePurplePantone, for: .normal)
+    }
+    
+    func setupTextFields() {
+        [emailPhoneTextField, passwordTextField].forEach { (textField) in
+            textField?.layer.cornerRadius = 20.0
+            textField?.backgroundColor = .white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,8 +82,50 @@ class LoginFormViewController: UIViewController {
     // MARK: - Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         print(#function)
-        print("Получены значения:")
-        print("Логин: \(emailPhoneTextField.text ?? "Нет значения")")
-        print("Пароль: \(passwordTextField.text ?? "Нет значения")")
+        if isLoginSuccesfull() {
+            print("Успешный вход!")
+            moveToTabBarController()
+        } else {
+            print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
+            showLoginErrorAlert()
+        }
     }
+    
+    func isLoginSuccesfull() -> Bool {
+        guard let login = emailPhoneTextField.text,
+              let password = passwordTextField.text else { return false }
+        
+        var loginResult: Bool = false
+        
+        if login == "admin" &&
+           password == "admin" {
+            loginResult = true
+        }
+        
+        return loginResult
+    }
+    
+    // MARK: - Отображение alert о неверных данных
+    func showLoginErrorAlert() {
+        let alertContoller = UIAlertController(title: "Ошибка!", message: "Введены неверные данные пользователя. Подсказка: логин - admin, пароль - admin", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertContoller.addAction(action)
+        present(alertContoller, animated: true, completion: nil)
+    }
+    
+    // MARK: - Переход к TabBarController при успешной авторизации
+    func moveToTabBarController() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+
+struct Colors {
+    static let oxfordBlue = UIColor(red: 9/255, green: 21/255, blue: 64/255, alpha: 1.0)
+    static let cornflowerBlue = UIColor(red: 118/255, green: 146/255, blue: 255/255, alpha: 1.0)
+    static let palePurplePantone = UIColor(red: 255/255, green: 240/255, blue: 255/255, alpha: 1.0)
+    static let darkPalePurplePantone = UIColor(red: 255/255, green: 230/255, blue: 255/255, alpha: 1.0)
+    static let baseVK = UIColor(red: 68/255, green: 129/255, blue: 182/255, alpha: 1.0)
 }
