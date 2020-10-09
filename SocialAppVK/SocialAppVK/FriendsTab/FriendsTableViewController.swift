@@ -13,8 +13,6 @@ class FriendsTableViewController: UITableViewController {
     var sections: [Character] = []
     var userData: [Character: [User]] = [:]
     
-    private var sectionSelector: SectionSelector!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

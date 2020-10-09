@@ -10,49 +10,60 @@ import UIKit
 @IBDesignable class AvatarView: UIView {
     
     @IBOutlet weak var avatarImageView: UIImageView!
+
+}
+
+extension AvatarView {
     
-    @IBInspectable var shadowColor: UIColor = .black {
-        didSet {
-            self.layer.shadowColor = shadowColor.cgColor
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
         }
     }
     
-    @IBInspectable var shadowOpacity: Float = 0.6 {
-        didSet {
-            self.layer.shadowOpacity = shadowOpacity
+    @IBInspectable var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
         }
     }
     
-    @IBInspectable var shadowRadius: CGFloat = 8 {
-        didSet {
-            self.layer.shadowRadius = shadowRadius
+    @IBInspectable var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
         }
     }
     
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 25.0
-     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        cornerRadius = self.frame.height / 2
-        self.backgroundColor = Colors.palePurplePantone
-
-        if shadowLayer == nil {
-            
-            shadowLayer = CAShapeLayer()
-          
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-
-            shadowLayer.shadowColor = shadowColor.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize.zero
-            shadowLayer.shadowOpacity = shadowOpacity
-            shadowLayer.shadowRadius = shadowRadius
-
-            layer.insertSublayer(shadowLayer, at: 0)
+    @IBInspectable var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
         }
-        
-        avatarImageView.layer.cornerRadius = cornerRadius
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    @IBInspectable var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
     }
 }
