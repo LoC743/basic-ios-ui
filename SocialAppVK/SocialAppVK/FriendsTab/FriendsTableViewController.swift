@@ -9,29 +9,59 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-   var friendTestData = friendTestDataBackup
-
+    var friendTestData = friendTestDataBackup
+    var sections: [Character] = []
+    var userData: [Character: [User]] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.palePurplePantone
+        
+        getUserData()
     }
-
+    
+    func getUserData() {
+        var sectionSet: Set<Character> = []
+        for user in friendTestData {
+            if let letter = user.fullName.first {
+                sectionSet.insert(letter)
+                
+                if userData[letter] == nil {
+                    userData[letter] = []
+                }
+                
+                userData[letter]?.append(user)
+            }
+        }
+        sections = sectionSet.sorted()
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendTestData.count
+        let sectionLetter = sections[section]
+        let users = userData[sectionLetter] ?? []
+        return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection
+                                section: Int) -> String? {
+        return String(sections[section])
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell", for: indexPath) as! FriendTableViewCell
         
-        cell.avatarView.avatarImageView.image = friendTestData[indexPath.row].image
-        cell.nameLabel.text = friendTestData[indexPath.row].fullName
+        let sectionLetter = sections[indexPath.section]
+        let user = userData[sectionLetter]![indexPath.row]
+        
+        cell.avatarView.avatarImageView.image = user.image
+        cell.nameLabel.text = user.fullName
 
         return cell
     }
