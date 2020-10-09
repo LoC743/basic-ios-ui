@@ -13,6 +13,8 @@ class FriendsTableViewController: UITableViewController {
     var sections: [Character] = []
     var userData: [Character: [User]] = [:]
     
+    private var sectionSelector: SectionSelector!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,8 +74,12 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
-        vc.friendImages.append(friendTestData[indexPath.row].image)
-        vc.title = friendTestData[indexPath.row].fullName
+        
+        let sectionLetter = sections[indexPath.section]
+        let user = userData[sectionLetter]![indexPath.row]
+        
+        vc.friendImages.append(user.image)
+        vc.title = user.fullName
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
