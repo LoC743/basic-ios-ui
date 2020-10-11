@@ -8,24 +8,17 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarView: CustomAvatarView!
     @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         contentView.backgroundColor = Colors.palePurplePantone
-        
-        setupImageView()
-    }
-    
-    private func setupImageView() {
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
-        avatarImageView.contentMode = .scaleAspectFill
     }
     
     func setValues(item: CellModel) {
-        avatarImageView.image = item.image
+        avatarView.setImage(item.image)
         nameLabel.text = item.name
     }
 
