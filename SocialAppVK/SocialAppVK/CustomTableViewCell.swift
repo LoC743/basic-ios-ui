@@ -14,12 +14,19 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        contentView.backgroundColor = Colors.palePurplePantone
+        
         setupImageView()
     }
     
-    func setupImageView() {
+    private func setupImageView() {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         avatarImageView.contentMode = .scaleAspectFill
+    }
+    
+    func setValues(item: CellModel) {
+        avatarImageView.image = item.image
+        nameLabel.text = item.name
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

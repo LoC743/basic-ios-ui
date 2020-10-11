@@ -8,8 +8,6 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
-    
-   var friendTestData = friendTestDataBackup
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +24,14 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendTestData.count
+        return User.database.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         
-        cell.avatarImageView.image = friendTestData[indexPath.row].image
-        cell.nameLabel.text = friendTestData[indexPath.row].fullName
+        let user =  User.database[indexPath.row]
+        cell.setValues(item: user)
 
         return cell
     }
@@ -44,8 +42,11 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
-        vc.friendImages.append(friendTestData[indexPath.row].image)
-        vc.title = friendTestData[indexPath.row].fullName
+        
+        let user = User.database[indexPath.row]
+        
+        vc.friendImages.append(user.image)
+        vc.title = user.name
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
