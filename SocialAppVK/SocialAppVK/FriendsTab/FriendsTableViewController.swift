@@ -21,11 +21,15 @@ class FriendsTableViewController: UITableViewController {
         
         view.backgroundColor = Colors.palePurplePantone
         tableView.sectionIndexColor = .white
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getUserData()
     }
     
     func getUserData() {
+        userData = [:]
         var sectionSet: Set<Character> = []
         for user in User.database {
             if let letter = user.name.first {
@@ -76,9 +80,10 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
         
-        let user = User.database[indexPath.row]
+        let sectionLetter = sections[indexPath.section]
+        let user = userData[sectionLetter]![indexPath.row]
         
-        vc.posts.append(user.image)
+        vc.posts = user.posts
         vc.title = user.name
         
         self.navigationController?.pushViewController(vc, animated: true)
