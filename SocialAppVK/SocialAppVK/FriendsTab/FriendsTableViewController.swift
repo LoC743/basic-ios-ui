@@ -14,6 +14,8 @@ class FriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        
         view.backgroundColor = Colors.palePurplePantone
     }
 
@@ -28,9 +30,9 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell", for: indexPath) as! FriendTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         
-        cell.friendImageView.image = friendTestData[indexPath.row].image
+        cell.avatarImageView.image = friendTestData[indexPath.row].image
         cell.nameLabel.text = friendTestData[indexPath.row].fullName
 
         return cell
