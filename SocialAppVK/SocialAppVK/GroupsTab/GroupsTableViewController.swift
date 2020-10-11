@@ -9,7 +9,17 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     
-    var groupsTestData: [Group] = groupsTestDataBackup
+    var addedGroups: [Group] {
+        get {
+            return Group.database.filter { $0.isAdded == true }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +36,7 @@ class GroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupsTestData.count
+        return addedGroups.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -35,9 +45,8 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
-
-        cell.avatarImageView.image = groupsTestData[indexPath.row].image
-        cell.nameLabel.text = groupsTestData[indexPath.row].name
+        
+        cell.setValues(item: addedGroups[indexPath.row])
 
         return cell
     }
@@ -48,21 +57,11 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groupsTestData.remove(at: indexPath.row)
+            
+            let id = addedGroups[indexPath.row].id
+            Group.changeGroupAdded(by: id)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    @IBAction func addNewGroup(_ sender: UIBarButtonItem) {
-        print(#function)
-        let vc = AddNewGroupViewController(nibName: "AddNewGroupViewController", bundle: nil)
-        vc.mainController = self
-        present(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func resetGroupList(_ sender: UIBarButtonItem) {
-        groupsTestData = groupsTestDataBackup
-        tableView.reloadData()
-    }
-
 }

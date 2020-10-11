@@ -200,35 +200,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvD-Qn-ELw">
-                            <size key="itemSize" width="414" height="759"/>
+                            <size key="itemSize" width="254" height="355"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCollectionViewCell" id="A8B-x2-nZI" customClass="FriendCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="A8B-x2-nZI" customClass="PostCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w9C-7l-LQ4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="axw-zh-FGL">
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtw-FX-Yc1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="mtw-FX-Yc1" secondAttribute="trailing" id="9Ow-VX-jGO"/>
-                                        <constraint firstItem="mtw-FX-Yc1" firstAttribute="top" secondItem="w9C-7l-LQ4" secondAttribute="top" id="Jbd-1x-oan"/>
-                                        <constraint firstItem="mtw-FX-Yc1" firstAttribute="leading" secondItem="w9C-7l-LQ4" secondAttribute="leading" id="ME8-sg-Xo3"/>
-                                        <constraint firstAttribute="bottom" secondItem="mtw-FX-Yc1" secondAttribute="bottom" id="jgf-Bf-9ha"/>
-                                    </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="414" height="759"/>
-                                <connections>
-                                    <outlet property="friendImageView" destination="mtw-FX-Yc1" id="fku-h6-xEY"/>
-                                </connections>
+                                <size key="customSize" width="175" height="175"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -287,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cpG-5j-NBQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cpG-5j-NBQ" customClass="CustomTableViewCell" customModule="SocialAppVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cpG-5j-NBQ" id="8UB-w0-5m5">

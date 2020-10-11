@@ -7,14 +7,18 @@
 
 import UIKit
 
-private let reuseIdentifier = "FriendCollectionViewCell"
+
 
 class FriendsCollectionViewController: UICollectionViewController {
     
-    var friendImages: [UIImage] = []
+    private let reuseIdentifier = "PostCollectionViewCell"
+    
+    var posts: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         view.backgroundColor = Colors.palePurplePantone
     }
@@ -27,13 +31,13 @@ class FriendsCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendImages.count
+        return posts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PostCollectionViewCell
         
-        cell.friendImageView.image = friendImages[indexPath.item]
+        cell.setValues(image: posts[indexPath.item])
     
         return cell
     }

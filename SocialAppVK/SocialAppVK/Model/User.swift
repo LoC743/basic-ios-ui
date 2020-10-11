@@ -15,6 +15,7 @@ protocol CellModel {
 
 struct User: CellModel {
     let id: Int
+    
     var image: UIImage
     var name: String
     var isAdded: Bool

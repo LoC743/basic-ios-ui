@@ -8,11 +8,13 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
+    
+    private let reuseIdentifier = "CustomTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
         
         view.backgroundColor = Colors.palePurplePantone
     }
@@ -28,7 +30,7 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomTableViewCell
         
         let user =  User.database[indexPath.row]
         cell.setValues(item: user)
@@ -45,7 +47,7 @@ class FriendsTableViewController: UITableViewController {
         
         let user = User.database[indexPath.row]
         
-        vc.friendImages.append(user.image)
+        vc.posts.append(user.image)
         vc.title = user.name
         
         self.navigationController?.pushViewController(vc, animated: true)

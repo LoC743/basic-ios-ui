@@ -10,9 +10,9 @@
 		8A184F8125332C02004A002E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A184F7F25332C02004A002E /* CustomTableViewCell.swift */; };
 		8A184F8225332C02004A002E /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A184F8025332C02004A002E /* CustomTableViewCell.xib */; };
 		8A184F8725332D8B004A002E /* GroupSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A184F8625332D8B004A002E /* GroupSearchTableViewController.swift */; };
+		8A184F8D25334458004A002E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A184F8B25334458004A002E /* PostCollectionViewCell.swift */; };
+		8A184F8E25334458004A002E /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A184F8C25334458004A002E /* PostCollectionViewCell.xib */; };
 		8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6DAE2525E50B00766A2E /* TabBarController.swift */; };
-		8A8FBFA8252B5C8B00704926 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */; };
-		8A8FBFA9252B5C8B00704926 /* AddNewGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */; };
 		8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173B25223748003E44BC /* AppDelegate.swift */; };
 		8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173D25223748003E44BC /* SceneDelegate.swift */; };
 		8A9A174325223748003E44BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9A174125223748003E44BC /* Main.storyboard */; };
@@ -24,7 +24,6 @@
 		8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */; };
 		8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */; };
 		8AA99CDB252B2C1D00A05F86 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CDA252B2C1D00A05F86 /* Colors.swift */; };
-		8AA99CDE252B424200A05F86 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */; };
 		8AA99CE1252B425500A05F86 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +31,9 @@
 		8A184F7F25332C02004A002E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8A184F8025332C02004A002E /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		8A184F8625332D8B004A002E /* GroupSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchTableViewController.swift; sourceTree = "<group>"; };
+		8A184F8B25334458004A002E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A184F8C25334458004A002E /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A3E6DAE2525E50B00766A2E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
-		8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewGroupViewController.xib; sourceTree = "<group>"; };
 		8A9A173825223748003E44BC /* SocialAppVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAppVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9A173B25223748003E44BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A9A173D25223748003E44BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +47,6 @@
 		8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		8AA99CDA252B2C1D00A05F86 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,8 @@
 			children = (
 				8AA99CD3252B1FF900A05F86 /* FriendsTableViewController.swift */,
 				8AA99CE0252B425500A05F86 /* FriendsCollectionViewController.swift */,
-				8AA99CDD252B424200A05F86 /* FriendCollectionViewCell.swift */,
+				8A184F8B25334458004A002E /* PostCollectionViewCell.swift */,
+				8A184F8C25334458004A002E /* PostCollectionViewCell.xib */,
 			);
 			path = FriendsTab;
 			sourceTree = "<group>";
@@ -123,8 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				8AA99CD6252B200600A05F86 /* GroupsTableViewController.swift */,
-				8A8FBFA6252B5C8B00704926 /* AddNewGroupViewController.swift */,
-				8A8FBFA7252B5C8B00704926 /* AddNewGroupViewController.xib */,
 				8A184F8625332D8B004A002E /* GroupSearchTableViewController.swift */,
 			);
 			path = GroupsTab;
@@ -188,10 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9A17482522374E003E44BC /* LaunchScreen.storyboard in Resources */,
-				8A8FBFA9252B5C8B00704926 /* AddNewGroupViewController.xib in Resources */,
 				8A9A17452522374E003E44BC /* Assets.xcassets in Resources */,
 				8A184F8225332C02004A002E /* CustomTableViewCell.xib in Resources */,
 				8A9A174325223748003E44BC /* Main.storyboard in Resources */,
+				8A184F8E25334458004A002E /* PostCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA99CDE252B424200A05F86 /* FriendCollectionViewCell.swift in Sources */,
 				8A9A175225223E94003E44BC /* LoginFormViewController.swift in Sources */,
 				8AA99CDB252B2C1D00A05F86 /* Colors.swift in Sources */,
 				8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */,
@@ -210,11 +206,11 @@
 				8AA99CD4252B1FF900A05F86 /* FriendsTableViewController.swift in Sources */,
 				8A184F8125332C02004A002E /* CustomTableViewCell.swift in Sources */,
 				8AA99CD1252B1EDE00A05F86 /* Group.swift in Sources */,
-				8A8FBFA8252B5C8B00704926 /* AddNewGroupViewController.swift in Sources */,
 				8A184F8725332D8B004A002E /* GroupSearchTableViewController.swift in Sources */,
 				8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */,
 				8AA99CE1252B425500A05F86 /* FriendsCollectionViewController.swift in Sources */,
 				8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */,
+				8A184F8D25334458004A002E /* PostCollectionViewCell.swift in Sources */,
 				8AA99CCE252B1ED800A05F86 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
