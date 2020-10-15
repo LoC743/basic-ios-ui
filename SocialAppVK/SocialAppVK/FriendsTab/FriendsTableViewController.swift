@@ -103,6 +103,26 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         return searchSections.map { String($0) }
     }
     
+    // MARK: - Custom Section View
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewHeight: CGFloat = 40
+        let viewFrame: CGRect = CGRect(x: 0, y: 0, width: tableView.frame.width, height: viewHeight)
+        let view = UIView(frame: viewFrame)
+        
+        view.backgroundColor = Colors.palePurplePantone.withAlphaComponent(0.65)
+        
+        let sectionLabelFrame: CGRect = CGRect(x: 15, y: 5, width: 15, height: viewHeight/2)
+        let sectionLabel = UILabel(frame: sectionLabelFrame)
+        sectionLabel.textAlignment = .center
+        sectionLabel.textColor = Colors.oxfordBlue
+        sectionLabel.text = String(searchSections[section])
+        
+        view.addSubview(sectionLabel)
+        
+        return view
+    }
+    
     // MARK: - SearchBar setup
     
     func resetSearchTableViewData() {
