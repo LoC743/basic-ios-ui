@@ -13,8 +13,12 @@ enum LikeState {
 }
 
 protocol PostModel {
+    var ownerId: Int { get }
+    
+    var date: Date { get set }
     var image: UIImage { get set }
     var likeState: LikeState { get set }
+    var text: String { get set }
 }
 
 struct Post: PostModel {
@@ -23,6 +27,8 @@ struct Post: PostModel {
     
     var image: UIImage
     var likeState: LikeState
+    var date: Date
+    var text: String
     
     mutating func changeLikeState() {
         if likeState == .dislike {

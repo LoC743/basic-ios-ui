@@ -156,6 +156,7 @@
                     <connections>
                         <segue destination="ibf-gu-SJy" kind="relationship" relationship="viewControllers" id="lSh-DH-kuQ"/>
                         <segue destination="H5Q-4w-M5f" kind="relationship" relationship="viewControllers" id="civ-8K-K7l"/>
+                        <segue destination="NKt-hf-D7e" kind="relationship" relationship="viewControllers" id="YqI-Li-5oK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Let-wI-urF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -327,6 +328,36 @@
             </objects>
             <point key="canvasLocation" x="1512" y="494"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="qSD-qK-5uT">
+            <objects>
+                <tableViewController id="EkB-IG-9DW" customClass="NewsTableViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="07c-Ss-Mkl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZVB-4d-yyg" customClass="NewsTableViewCell" customModule="SocialAppVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZVB-4d-yyg" id="aAT-ev-yX5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EkB-IG-9DW" id="oK0-KY-zvY"/>
+                            <outlet property="delegate" destination="EkB-IG-9DW" id="ONy-9D-Sss"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новости" id="eFG-UE-xt6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWD-4h-zty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418.840579710145" y="1242.3913043478262"/>
+        </scene>
         <!--Друзья-->
         <scene sceneID="ijR-75-niN">
             <objects>
@@ -351,8 +382,34 @@
             </objects>
             <point key="canvasLocation" x="1511.5942028985507" y="-324.45652173913044"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="RSa-ec-2yU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKt-hf-D7e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="fGw-aW-xXL">
+                        <color key="badgeColor" red="0.035294117649999998" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Twn-BL-yzu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.035294117649999998" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EkB-IG-9DW" kind="relationship" relationship="rootViewController" id="lH6-yS-Hua"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf6-zw-Al7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511.5942028985507" y="1242.3913043478262"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>

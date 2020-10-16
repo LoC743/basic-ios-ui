@@ -152,7 +152,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
             
-            searchSections = Array(sectionSearchSet)
+            searchSections = Array(sectionSearchSet).sorted()
          }
 
         self.tableView.reloadData()
