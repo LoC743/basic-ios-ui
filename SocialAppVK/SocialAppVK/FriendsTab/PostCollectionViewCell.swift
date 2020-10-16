@@ -53,7 +53,12 @@ class PostCollectionViewCell: UICollectionViewCell {
         let userId = post.ownerId
         let postId = post.id
         
-        User.database[userId].posts[postId].changeLikeState()
+        for i in 0..<User.database[userId].posts.count {
+            if postId == User.database[userId].posts[i].id {
+                User.database[userId].posts[i].changeLikeState()
+            }
+        }
+        
         self.post?.changeLikeState()
     }
 

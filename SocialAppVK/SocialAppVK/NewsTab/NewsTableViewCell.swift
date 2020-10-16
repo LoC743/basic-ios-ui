@@ -11,10 +11,16 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
+    
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var repostButton: UIButton!
+    
+    @IBOutlet weak var viewsCountLabel: UILabel!
     
     private var post: Post?
     
@@ -67,7 +73,7 @@ class NewsTableViewCell: UITableViewCell {
         return string
     }
     
-    private func setupLikeButton() {
+    private func changeLikeButtonImage() {
         guard let post = post else { return }
         
         if post.likeState == .dislike {
@@ -81,15 +87,23 @@ class NewsTableViewCell: UITableViewCell {
         guard let user = User.getUser(by: item.ownerId) else { return }
         
         post = item as? Post
+        
+        guard let post = post else { return }
 
         avatarImageView.image = user.image
         nameLabel.text = user.name
         
-        postDateLabel.text = getStringFromDate(item.date)
-        postTextLabel.text = item.text
-        postImageView.image = item.image
+        postDateLabel.text = getStringFromDate(post.date)
+        postTextLabel.text = post.text
+        postImageView.image = post.image
         
-        setupLikeButton()
+        likeButton.setTitle(String(post.likesCount), for: .normal)
+        repostButton.setTitle(String(post.repostsCount), for: .normal)
+        commentButton.setTitle(String(post.commentsCount), for: .normal)
+        
+        viewsCountLabel.text = String(post.viewsCount)
+        
+        changeLikeButtonImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -102,7 +116,11 @@ class NewsTableViewCell: UITableViewCell {
         let userId = post.ownerId
         let postId = post.id
         
-        User.database[userId].posts[postId].changeLikeState()
+        for i in 0..<User.database[userId].posts.count {
+            if postId == User.database[userId].posts[i].id {
+                User.database[userId].posts[i].changeLikeState()
+            }
+        }
         self.post?.changeLikeState()
     }
     
@@ -116,5 +134,18 @@ class NewsTableViewCell: UITableViewCell {
             likeButton.setImage(dislikeImage, for: .normal)
             changeLikeState()
         }
+        
+        if let newPost = getUpdatedPost(id: post.id) {
+            self.post = newPost
+            likeButton.setTitle(String(newPost.likesCount), for: .normal)
+        }
+    }
+    
+    @IBAction func commentButtonPressed(_ sender: UIButton) {
+        print(#function)
+    }
+    
+    @IBAction func repostButtonPressed(_ sender: UIButton) {
+        print(#function)
     }
 }
