@@ -10,6 +10,12 @@ import UIKit
 class PostCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    private var post: Post?
+    
+    private let likeImage = UIImage(systemName: "heart.fill")!
+    private let dislikeImage = UIImage(systemName: "heart")!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,12 +25,49 @@ class PostCollectionViewCell: UICollectionViewCell {
         setupImageView()
     }
     
-    func setupImageView() {
+    private func setupImageView() {
         imageView.contentMode = .scaleAspectFill
     }
     
-    func setValues(image: UIImage) {
-        imageView.image = image
+    private func setupLikeButton() {
+        guard let post = post else { return }
+        
+        if post.likeState == .dislike {
+            likeButton.setImage(dislikeImage, for: .normal)
+        } else {
+            likeButton.setImage(likeImage, for: .normal)
+        }
+    }
+    
+    func setValues(item: PostModel) {
+        post = item as? Post
+        
+        imageView.image = item.image
+        
+        setupLikeButton()
+    }
+    
+    private func changeLikeState() {
+        guard let post = post else { return }
+        
+        let userId = post.ownerId
+        let postId = post.id
+        
+        User.database[userId].posts[postId].changeLikeState()
+        self.post?.changeLikeState()
     }
 
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        guard let post = self.post else { return }
+        
+        if post.likeState == .dislike {
+            likeButton.setImage(likeImage, for: .normal)
+            changeLikeState()
+        } else {
+            likeButton.setImage(dislikeImage, for: .normal)
+            changeLikeState()
+        }
+        
+        print(#function)
+    }
 }

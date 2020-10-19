@@ -9,6 +9,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    var sections: [Character] = []
+    var userData: [Character: [User]] = [:]
+    
     private let reuseIdentifier = "CustomTableViewCell"
 
     override func viewDidLoad() {
@@ -17,22 +20,54 @@ class FriendsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
         
         view.backgroundColor = Colors.palePurplePantone
+        tableView.sectionIndexColor = .white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getUserData()
+    }
+    
+    func getUserData() {
+        userData = [:]
+        var sectionSet: Set<Character> = []
+        for user in User.database {
+            if let letter = user.name.first {
+                sectionSet.insert(letter)
+                
+                if userData[letter] == nil {
+                    userData[letter] = []
+                }
+                
+                userData[letter]?.append(user)
+            }
+        }
+        sections = sectionSet.sorted()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return User.database.count
+        let sectionLetter = sections[section]
+        let users = userData[sectionLetter] ?? []
+        return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection
+                                section: Int) -> String? {
+        return String(sections[section])
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomTableViewCell
         
-        let user =  User.database[indexPath.row]
+        let sectionLetter = sections[indexPath.section]
+        let user = userData[sectionLetter]![indexPath.row]
+        
         cell.setValues(item: user)
 
         return cell
@@ -45,11 +80,16 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
         
-        let user = User.database[indexPath.row]
+        let sectionLetter = sections[indexPath.section]
+        let user = userData[sectionLetter]![indexPath.row]
         
-        vc.posts.append(user.image)
+        vc.posts = user.posts
         vc.title = user.name
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sections.map { String($0) }
     }
 }

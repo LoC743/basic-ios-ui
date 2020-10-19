@@ -20,6 +20,8 @@ struct User: CellModel {
     var name: String
     var isAdded: Bool
     
+    var posts: [Post]
+    
     static func changeUserAdded(by id: Int) {
         for i in 0..<database.count {
             if database[i].id == id {
@@ -28,9 +30,9 @@ struct User: CellModel {
         }
     }
     
-    static var database: [User] = [User(id: 0, image: UIImage(named: "profile1")!, name: "Иван Иванов", isAdded: false),
-                                   User(id: 1, image: UIImage(named: "profile2")!, name: "Мария Иванова", isAdded: false),
-                                   User(id: 2, image: UIImage(named: "profile3")!, name: "Николай Сидоров", isAdded: false),
-                                   User(id: 3, image: UIImage(named: "profile4")!, name: "Леонид Харламов", isAdded: false),
-                                   User(id: 4, image: UIImage(named: "profile5")!, name: "Ксения Новикова", isAdded: false)]
+    static var database: [User] = [User(id: 0, image: UIImage(named: "profile1")!, name: "Иван Иванов", isAdded: false, posts: [Post(id: 0, ownerId: 0, image: UIImage(named: "profile1")!, likeState: .dislike), Post(id: 1, ownerId: 0, image: UIImage(named: "profile2")!, likeState: .like)]),
+                                   User(id: 1, image: UIImage(named: "profile2")!, name: "Мария Иванова", isAdded: false, posts: [Post(id: 0, ownerId: 1, image: UIImage(named: "profile2")!, likeState: .dislike)]),
+                                   User(id: 2, image: UIImage(named: "profile3")!, name: "Николай Сидоров", isAdded: false, posts: [Post(id: 0, ownerId: 2, image: UIImage(named: "profile3")!, likeState: .dislike)]),
+                                   User(id: 3, image: UIImage(named: "profile4")!, name: "Леонид Харламов", isAdded: false, posts: [Post(id: 0, ownerId: 3, image: UIImage(named: "profile4")!, likeState: .dislike)]),
+                                   User(id: 4, image: UIImage(named: "profile5")!, name: "Ксения Новикова", isAdded: false, posts: [Post(id: 0, ownerId: 4, image: UIImage(named: "profile5")!, likeState: .dislike)])]
 }

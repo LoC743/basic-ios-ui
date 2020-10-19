@@ -19,20 +19,34 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-A2-P5R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35M-Gy-yjX">
+                        <rect key="frame" x="176" y="233" width="139" height="22"/>
+                        <color key="tintColor" red="1" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Мне нравится" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="likeButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8zR-6L-dSY"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="35M-Gy-yjX" secondAttribute="trailing" constant="5" id="7cK-jW-Jh0"/>
                 <constraint firstItem="Wmh-A2-P5R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ASl-xr-f53"/>
                 <constraint firstAttribute="bottom" secondItem="Wmh-A2-P5R" secondAttribute="bottom" id="KlP-Zw-jsI"/>
+                <constraint firstAttribute="bottom" secondItem="35M-Gy-yjX" secondAttribute="bottom" constant="5" id="QUo-6B-MA9"/>
                 <constraint firstAttribute="trailing" secondItem="Wmh-A2-P5R" secondAttribute="trailing" id="UQy-M8-alU"/>
                 <constraint firstItem="Wmh-A2-P5R" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iLR-Sq-yPd"/>
             </constraints>
             <size key="customSize" width="320" height="260"/>
             <connections>
                 <outlet property="imageView" destination="Wmh-A2-P5R" id="W7s-yL-Yhk"/>
+                <outlet property="likeButton" destination="35M-Gy-yjX" id="iPy-uW-gWT"/>
             </connections>
             <point key="canvasLocation" x="336.23188405797106" y="223.66071428571428"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
 </document>

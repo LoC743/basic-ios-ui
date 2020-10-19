@@ -13,7 +13,7 @@ class FriendsCollectionViewController: UICollectionViewController {
     
     private let reuseIdentifier = "PostCollectionViewCell"
     
-    var posts: [UIImage] = []
+    var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class FriendsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PostCollectionViewCell
         
-        cell.setValues(image: posts[indexPath.item])
+        cell.setValues(item: posts[indexPath.item])
     
         return cell
     }
