@@ -16,6 +16,10 @@ class LoginFormViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    lazy var loadingView: UIView = {
+        return LoadingView(frame: CGRect(x: view.frame.minX, y: view.frame.minY, width: view.frame.maxX, height: view.frame.maxY))
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +28,7 @@ class LoginFormViewController: UIViewController {
         
         setupButton()
         setupTextFields()
+        setupLoadingView()
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
@@ -42,6 +47,11 @@ class LoginFormViewController: UIViewController {
             textField?.layer.cornerRadius = 20.0
             textField?.backgroundColor = .white
         }
+    }
+    
+    func setupLoadingView() {
+        view.addSubview(loadingView)
+        loadingView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,14 +92,9 @@ class LoginFormViewController: UIViewController {
     // MARK: - Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         print(#function)
-        if isLoginSuccesfull() {
-            print("Успешный вход!")
-            moveToTabBarController()
-        } else {
-            print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
-            showLoginErrorAlert()
-        }
+        loadingWhileEnter()
     }
+
     
     func isLoginSuccesfull() -> Bool {
         guard let login = emailPhoneTextField.text,
@@ -118,5 +123,24 @@ class LoginFormViewController: UIViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
+    }
+    
+    func tryToEnter() {
+        if isLoginSuccesfull() {
+            print("Успешный вход!")
+            moveToTabBarController()
+        } else {
+            print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
+            showLoginErrorAlert()
+        }
+    }
+    
+    func loadingWhileEnter() {
+        loadingView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 2...6)) {
+            self.loadingView.isHidden = true
+            self.tryToEnter()
+        }
+        
     }
 }
