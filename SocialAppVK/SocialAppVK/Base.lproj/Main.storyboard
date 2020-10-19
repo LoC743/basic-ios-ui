@@ -165,22 +165,19 @@
         <!--Друзья-->
         <scene sceneID="CJK-dZ-SR8">
             <objects>
-                <tableViewController id="umB-Ee-Hf5" sceneMemberID="viewController">
+                <tableViewController id="umB-Ee-Hf5" customClass="FriendsTableViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JOv-YU-k2n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6Fz-cS-VfS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" id="6Fz-cS-VfS" customClass="CustomTableViewCell" customModule="SocialAppVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Fz-cS-VfS" id="nFD-in-jqH">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="7bj-N7-yIU" kind="show" id="YPZ-tS-9Tr"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -194,28 +191,29 @@
             </objects>
             <point key="canvasLocation" x="2418.840579710145" y="-324.45652173913044"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Friends Collection View Controller-->
         <scene sceneID="636-Ve-Wbn">
             <objects>
-                <collectionViewController id="7bj-N7-yIU" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FriendsCollectionViewController" id="7bj-N7-yIU" customClass="FriendsCollectionViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uCA-v9-zbk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvD-Qn-ELw">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvD-Qn-ELw">
+                            <size key="itemSize" width="254" height="355"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A8B-x2-nZI">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="A8B-x2-nZI" customClass="PostCollectionViewCell" customModule="SocialAppVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w9C-7l-LQ4">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="axw-zh-FGL">
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="175" height="175"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -227,27 +225,24 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpi-NH-Lip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="-324"/>
+            <point key="canvasLocation" x="3253.6231884057975" y="-324.45652173913044"/>
         </scene>
         <!--Группы-->
         <scene sceneID="Sr2-oR-Lx8">
             <objects>
-                <tableViewController id="OKX-nS-9Ii" sceneMemberID="viewController">
+                <tableViewController id="OKX-nS-9Ii" customClass="GroupsTableViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E4s-71-etX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QYj-Ot-S3P">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableViewCell" id="QYj-Ot-S3P" customClass="CustomTableViewCell" customModule="SocialAppVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QYj-Ot-S3P" id="3mO-xd-3Bn">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="PyL-h7-aOO" kind="show" id="I3K-mZ-J9f"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -255,46 +250,47 @@
                             <outlet property="delegate" destination="OKX-nS-9Ii" id="f3r-dC-I7y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Группы" id="cCR-uN-qE4"/>
+                    <navigationItem key="navigationItem" title="Группы" id="cCR-uN-qE4">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="rTB-6U-m7E">
+                            <connections>
+                                <action selector="addNewGroup:" destination="OKX-nS-9Ii" id="Cjx-ab-apQ"/>
+                                <segue destination="4Vj-CO-sft" kind="show" id="1I7-LC-6Wc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynD-bw-hRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="494"/>
+            <point key="canvasLocation" x="2418.840579710145" y="493.20652173913049"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="owL-dy-cex">
+        <!--Group Search Table View Controller-->
+        <scene sceneID="rdX-Wh-1ep">
             <objects>
-                <collectionViewController id="PyL-h7-aOO" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g10-gJ-Koa">
+                <tableViewController storyboardIdentifier="GroupSearchTableViewController" id="4Vj-CO-sft" customClass="GroupSearchTableViewController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pIT-bg-J9E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Foo-Uq-1WW">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0mH-sw-X20">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FV-dg-8RU">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cpG-5j-NBQ" customClass="CustomTableViewCell" customModule="SocialAppVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cpG-5j-NBQ" id="8UB-w0-5m5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="PyL-h7-aOO" id="VeX-R1-hJH"/>
-                            <outlet property="delegate" destination="PyL-h7-aOO" id="LLg-Ch-VWH"/>
+                            <outlet property="dataSource" destination="4Vj-CO-sft" id="Dbm-ir-HKX"/>
+                            <outlet property="delegate" destination="4Vj-CO-sft" id="kqK-3E-Lnb"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="tgd-W6-VmG"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="omd-Iw-a3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bT8-e1-WKe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5D-q5-6YJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="494"/>
+            <point key="canvasLocation" x="3254" y="493"/>
         </scene>
         <!--Группы-->
         <scene sceneID="DrE-ea-SUI">
@@ -307,6 +303,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.035294117649999998" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -331,6 +330,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.035294117649999998" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -345,6 +347,7 @@
     <resources>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vkicon1024" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
