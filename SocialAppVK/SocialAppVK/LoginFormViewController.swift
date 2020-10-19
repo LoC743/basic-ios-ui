@@ -137,7 +137,7 @@ class LoginFormViewController: UIViewController {
     
     func loadingWhileEnter() {
         loadingView.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 2...6)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() /* + Double.random(in: 2...6) */) {
             self.loadingView.isHidden = true
             self.tryToEnter()
         }
