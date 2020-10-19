@@ -124,6 +124,12 @@ class NewsTableViewCell: UITableViewCell {
         self.post?.changeLikeState()
     }
     
+    private func setNewLikeValueWithAnimation(post: Post) {
+        UIView.transition(with: likeButton, duration: 0.8, options: [.curveEaseOut, .transitionCurlUp]) {
+            self.likeButton.setTitle(String(post.likesCount), for: .normal)
+        } completion: { (state) in }
+    }
+    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         guard let post = self.post else { return }
         
@@ -137,7 +143,7 @@ class NewsTableViewCell: UITableViewCell {
         
         if let newPost = getUpdatedPost(id: post.id) {
             self.post = newPost
-            likeButton.setTitle(String(newPost.likesCount), for: .normal)
+            setNewLikeValueWithAnimation(post: newPost)
         }
     }
     
