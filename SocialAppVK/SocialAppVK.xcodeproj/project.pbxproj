@@ -15,6 +15,7 @@
 		8A25FDBE25334F5400AF98F1 /* CustomAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25FDBD25334F5400AF98F1 /* CustomAvatarView.swift */; };
 		8A25FDC12533616300AF98F1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25FDC02533616300AF98F1 /* Post.swift */; };
 		8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E6DAE2525E50B00766A2E /* TabBarController.swift */; };
+		8A4C2AB825418E3C00DE263F /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4C2AB725418E3C00DE263F /* PhotoViewerViewController.swift */; };
 		8A9A173C25223748003E44BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173B25223748003E44BC /* AppDelegate.swift */; };
 		8A9A173E25223748003E44BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A173D25223748003E44BC /* SceneDelegate.swift */; };
 		8A9A174325223748003E44BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9A174125223748003E44BC /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		8A25FDBD25334F5400AF98F1 /* CustomAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarView.swift; sourceTree = "<group>"; };
 		8A25FDC02533616300AF98F1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8A3E6DAE2525E50B00766A2E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8A4C2AB725418E3C00DE263F /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		8A9A173825223748003E44BC /* SocialAppVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAppVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9A173B25223748003E44BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A9A173D25223748003E44BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = CustomTableViewCell;
 			sourceTree = "<group>";
 		};
+		8A4C2AB625418DF000DE263F /* FullscreenPhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				8A4C2AB725418E3C00DE263F /* PhotoViewerViewController.swift */,
+			);
+			path = FullscreenPhotoViewer;
+			sourceTree = "<group>";
+		};
 		8A9A172F25223748003E44BC = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 				8A9A17462522374E003E44BC /* LaunchScreen.storyboard */,
 				8A9A17492522374E003E44BC /* Info.plist */,
 				8A3E6DAE2525E50B00766A2E /* TabBarController.swift */,
+				8A4C2AB625418DF000DE263F /* FullscreenPhotoViewer */,
 				8AB781A52539A39F007AE4B2 /* NewsTab */,
 				8AA99CE9252B54AF00A05F86 /* FriendsTab */,
 				8AA99CEA252B54C600A05F86 /* GroupsTab */,
@@ -237,6 +248,7 @@
 				8A9A175225223E94003E44BC /* LoginFormViewController.swift in Sources */,
 				8AA99CDB252B2C1D00A05F86 /* Colors.swift in Sources */,
 				8AB781BB2539C51A007AE4B2 /* NewsTableViewCell.swift in Sources */,
+				8A4C2AB825418E3C00DE263F /* PhotoViewerViewController.swift in Sources */,
 				8A25FDBE25334F5400AF98F1 /* CustomAvatarView.swift in Sources */,
 				8AA99CD7252B200600A05F86 /* GroupsTableViewController.swift in Sources */,
 				8A3E6DAF2525E50B00766A2E /* TabBarController.swift in Sources */,

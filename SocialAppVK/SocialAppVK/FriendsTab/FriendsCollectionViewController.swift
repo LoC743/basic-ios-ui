@@ -41,4 +41,18 @@ class FriendsCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PhotoViewerViewController") as! PhotoViewerViewController
+        
+        var photosArray: [UIImage] = []
+        
+        posts.forEach { (post) in
+            photosArray.append(post.image)
+        }
+        
+        vc.getPhotosData(photos: photosArray, currentIndex: indexPath.item)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
