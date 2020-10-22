@@ -50,6 +50,17 @@ class PhotoViewerViewController: UIViewController {
 
         return imageView
     }()
+    
+    lazy var additionalImageView: UIImageView = {
+        var imageView = UIImageView(frame: self.view.frame)
+        imageView.image = UIImage(named: "default-profile")
+        
+        imageView.isHidden = true
+        imageView.backgroundColor = .black
+        imageView.contentMode = .scaleAspectFit
+
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +70,7 @@ class PhotoViewerViewController: UIViewController {
         setCurrentImageView()
         
         view.addSubview(currentImageView)
-        
+        view.addSubview(additionalImageView)
     }
     
     private func setupView() {
@@ -83,14 +94,58 @@ class PhotoViewerViewController: UIViewController {
         currentImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
     }
     
+    private func setAdditionalImageViewRightSide() {
+        self.currentIndex += 1
+        additionalImageView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.maxX, height: self.view.frame.maxY)
+        self.additionalImageView.isHidden = false
+        additionalImageView.image = currentImage
+    }
+    
+    private func animateSwipe(direction: UISwipeGestureRecognizer.Direction) {
+        var translationX: CGFloat = 0
+        
+        if direction == .left {
+            translationX = -self.view.frame.maxX
+        } else if direction == .right {
+            translationX = self.view.frame.maxX
+        }
+        
+        UIView.animate(withDuration: 0.4) {
+            // Main ImageView
+            self.currentImageView.transform = CGAffineTransform(translationX: translationX, y: 0)
+            // Additional ImageView
+            self.additionalImageView.transform = CGAffineTransform(translationX: translationX, y: 0)
+            
+        } completion: { (_) in
+            // Main ImageView
+            self.currentImageView.image = self.currentImage
+            
+            self.currentImageView.transform = .identity
+            self.currentImageView.alpha = 1
+            
+            // Additional ImageView
+            self.additionalImageView.transform = .identity
+            self.additionalImageView.isHidden = true
+        }
+    }
+    
     @objc func handleLeftSwipe(sender: UISwipeGestureRecognizer) {
-        currentIndex += 1
-        currentImageView.image = currentImage
+        guard currentIndex + 1 != photos.count else { return }
+        setAdditionalImageViewRightSide()
+        animateSwipe(direction: sender.direction)
+    }
+    
+    private func setAdditionalImageViewLeftSide() {
+        self.currentIndex -= 1
+        additionalImageView.frame = CGRect(x: -self.view.frame.maxX, y: self.view.frame.minY, width: self.view.frame.maxX, height: self.view.frame.maxY)
+        self.additionalImageView.isHidden = false
+        additionalImageView.image = currentImage
     }
     
     @objc func handleRightSwipe(sender: UISwipeGestureRecognizer) {
-        currentIndex -= 1
-        currentImageView.image = currentImage
+        guard currentIndex - 1 >= 0 else { return }
+        setAdditionalImageViewLeftSide()
+        animateSwipe(direction: sender.direction)
     }
 
 }
