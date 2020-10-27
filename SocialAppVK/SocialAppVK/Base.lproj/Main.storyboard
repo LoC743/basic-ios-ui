@@ -320,7 +320,7 @@
         <!--Группы-->
         <scene sceneID="DrE-ea-SUI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H5Q-4w-M5f" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H5Q-4w-M5f" customClass="CustomNavigationController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="person.3" catalog="system" id="fGL-WN-kgg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nkx-Ed-Bh3">
@@ -377,7 +377,7 @@
         <!--Друзья-->
         <scene sceneID="ijR-75-niN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibf-gu-SJy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibf-gu-SJy" customClass="CustomNavigationController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="oos-zc-YX6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H3f-Kk-b8Z">
@@ -401,7 +401,7 @@
         <!--Новости-->
         <scene sceneID="RSa-ec-2yU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKt-hf-D7e" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKt-hf-D7e" customClass="CustomNavigationController" customModule="SocialAppVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="fGw-aW-xXL">
                         <color key="badgeColor" red="0.035294117649999998" green="0.08235294118" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
