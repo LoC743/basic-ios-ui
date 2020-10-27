@@ -28,14 +28,7 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
             self.hasStarted = true
             self.viewController?.navigationController?.popViewController(animated: true)
         case .changed:
-            let translation = gesture.translation(in: gesture.view)
-            
-            let relativeTranslation = translation.x / (gesture.view?.bounds.width ?? 1)
-            
-            let progress =  max(0, min(1, relativeTranslation))
-            
-            self.shouldFinish = progress > 0.33
-            self.update(progress)
+            break
         case .ended:
             self.hasStarted = false
             self.shouldFinish ? self.finish(): self.cancel()
