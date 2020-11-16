@@ -7,25 +7,35 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    var sections: [Character] = []
-    var userData: [Character: [User]] = [:]
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var sections: [Character] = []             // Массив букв для выделения секций
+    var userData: [Character: [User]] = [:]    // Словарь для получения массива пользователей по букве секции
+    var searchData: [Character: [User]] = [:]  // Такой же как и userData, только при использовании UISearchBar
+    var searchSections: [Character] = []       // Такой же как и sections, используется при UISearchBar
     
     private let reuseIdentifier = "CustomTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
+        
         tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
         
         view.backgroundColor = Colors.palePurplePantone
-        tableView.sectionIndexColor = .white
+        tableView.sectionIndexBackgroundColor = Colors.palePurplePantone
+        
+        getUserData()
+        resetSearchTableViewData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getUserData()
+        resetSearchTableViewData()
     }
     
     func getUserData() {
@@ -48,25 +58,25 @@ class FriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return searchSections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionLetter = sections[section]
-        let users = userData[sectionLetter] ?? []
+        let sectionLetter = searchSections[section]
+        let users = searchData[sectionLetter] ?? []
         return users.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
-        return String(sections[section])
+        return String(searchSections[section])
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomTableViewCell
         
-        let sectionLetter = sections[indexPath.section]
-        let user = userData[sectionLetter]![indexPath.row]
+        let sectionLetter = searchSections[indexPath.section]
+        let user = searchData[sectionLetter]![indexPath.row]
         
         cell.setValues(item: user)
 
@@ -80,8 +90,8 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
         
-        let sectionLetter = sections[indexPath.section]
-        let user = userData[sectionLetter]![indexPath.row]
+        let sectionLetter = searchSections[indexPath.section]
+        let user = searchData[sectionLetter]![indexPath.row]
         
         vc.posts = user.posts
         vc.title = user.name
@@ -90,6 +100,61 @@ class FriendsTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sections.map { String($0) }
+        return searchSections.map { String($0) }
+    }
+    
+    // MARK: - Custom Section View
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewHeight: CGFloat = 40
+        let viewFrame: CGRect = CGRect(x: 0, y: 0, width: tableView.frame.width, height: viewHeight)
+        let view = UIView(frame: viewFrame)
+        
+        view.backgroundColor = Colors.palePurplePantone.withAlphaComponent(0.65)
+        
+        let sectionLabelFrame: CGRect = CGRect(x: 15, y: 5, width: 15, height: viewHeight/2)
+        let sectionLabel = UILabel(frame: sectionLabelFrame)
+        sectionLabel.textAlignment = .center
+        sectionLabel.textColor = Colors.oxfordBlue
+        sectionLabel.text = String(searchSections[section])
+        
+        view.addSubview(sectionLabel)
+        
+        return view
+    }
+    
+    // MARK: - SearchBar setup
+    
+    func resetSearchTableViewData() {
+        searchSections = sections
+        searchData = userData
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchData = [:]
+        searchSections = []
+        var sectionSearchSet: Set<Character> = []
+        
+        if searchText.isEmpty {
+            resetSearchTableViewData()
+        } else {
+            for section in sections {
+                let userArray = userData[section] ?? []
+                
+                for user in userArray {
+                    if user.name.lowercased().contains(searchText.lowercased()) {
+                        if searchData[section] == nil {
+                            searchData[section] = []
+                        }
+                        sectionSearchSet.insert(section)
+                        searchData[section]?.append(user)
+                    }
+                }
+            }
+            
+            searchSections = Array(sectionSearchSet).sorted()
+         }
+
+        self.tableView.reloadData()
     }
 }
