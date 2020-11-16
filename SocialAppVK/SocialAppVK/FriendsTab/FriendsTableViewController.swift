@@ -123,6 +123,20 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         return view
     }
     
+    // MARK: Cell animation
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Before animation
+        cell.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        cell.alpha = 0.0
+        
+        // Animation
+        UIView.animate(withDuration: 1.0) {
+            cell.transform = .identity
+            cell.alpha = 1.0
+        }
+    }
+    
     // MARK: - SearchBar setup
     
     func resetSearchTableViewData() {
